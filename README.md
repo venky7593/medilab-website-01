@@ -13,7 +13,8 @@ Note: if we delete pv first, as pvc might have been bound to it, untill pvc dele
 step-5: delete the configmap if any
 
 step-6: delete the secrets if any
-=============================================================================
+
+============================================================================
 Deployment of k8s manifest files
 =============================================================================
 step-1: Create a branch in SCM repository and upload the k8s manifest files.

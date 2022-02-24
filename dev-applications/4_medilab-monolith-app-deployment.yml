@@ -20,7 +20,8 @@ spec:
           - name: medilab-image-registry
          containers:
            - name: medilab-monolith-app-container
-             image: narsi1839/medilab-monolith-app-image
+             #image: narsi1839/medilab-monolith-app-image
+             image: narsi1839/medilab-monolith-boot-app-image:latest
              ports:
                - containerPort: 8087
              env:

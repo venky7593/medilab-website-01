@@ -1,0 +1,20 @@
+---
+  - name: k8s-db-manifest-deployment
+    hosts: k8s-master-machine
+    become: 'yes'
+    become_user: clusteradmin
+    tasks:
+        - name: create the name space
+          shell: kubectl apply -f dev_database/1_mysql-ns.yml
+        - name: create the configmap
+          shell: kubectl apply -f dev_database/2_medilabConfigurationsMap.yml
+        - name: create config secrete
+          shell: kubectl apply -f dev_database/3_medilabConfigSecret.yml
+        - name: create persitent Volume
+          shell: kubectl apply -f dev_database/4_mysql-pv.yml
+        - name: create persitent Volume claim
+          shell: kubectl apply -f dev_database/5_mysql-pvc.yml
+        - name: create database daemonset
+          shell: kubectl apply -f dev_database/6_medilab-monolith-app-db-daemonset.yml
+        - name: create database service
+          shell: kubectl apply -f dev_database/7_medilab-monolith-app-db-service.yml

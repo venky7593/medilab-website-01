@@ -1,0 +1,20 @@
+---
+  - name: k8s-db-manifest-deployment-cleanup
+    hosts: k8s-master-machine
+    become: 'yes'
+    become_user: clusteradmin
+    tasks:
+        - name: delete database service
+          shell: kubectl delete -f dev_database/7_medilab-monolith-app-db-service.yml
+        - name: delete database daemonset
+          shell: kubectl delete -f dev_database/6_medilab-monolith-app-db-daemonset.yml
+        - name: delete persitent Volume claim
+          shell: kubectl delete -f dev_database/5_mysql-pvc.yml
+        - name: delete persitent Volume
+          shell: kubectl delete -f dev_database/4_mysql-pv.yml
+        - name: delete config secrete
+          shell: kubectl delete -f dev_database/3_medilabConfigSecret.yml
+        - name: delete the configmap
+          shell: kubectl delete -f dev_database/2_medilabConfigurationsMap.yml
+        - name: delete the name space
+          shell: kubectl delete -f dev_database/1_mysql-ns.yml

@@ -1,4 +1,3 @@
----
   - name: k8s-db-manifest-deployment
     hosts: k8s-master-machine
     become: 'yes'

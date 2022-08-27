@@ -15,6 +15,7 @@
         - name: create persitent Volume claim
           shell: kubectl apply -f dev-database/5_mysql-pvc.yml
         - name: create database daemonset
-          shell: kubectl apply -f dev-database/6_medilab-monolith-app-db-daemonset.yml
+          #shell: kubectl apply -f dev-database/6_medilab-monolith-app-db-daemonset.yml
+          shell: kubectl apply -f dev-database/6_medilab-monolith-app-db-deployment.yml
         - name: create database service
           shell: kubectl apply -f dev-database/7_medilab-monolith-app-db-service.yml

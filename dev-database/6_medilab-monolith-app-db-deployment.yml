@@ -6,7 +6,7 @@ metadata:
     app: medilab-monolith-db-server
   namespace: dev-database  
 spec: 
-  replicas: 1
+  replicas: 2
   selector: 
     matchLabels: 
       app: medilab-monolith-db-server

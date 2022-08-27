@@ -1,0 +1,9 @@
+- name: download k8s files
+  hosts: k8s-master-machine
+  become: 'yes'
+  become_user: clusteradmin
+  tasks:
+   - name: copy the dev k8s files into dev_database folder
+     copy: src=/opt/app-files/dev-database dest=.
+   - name: copy the dev k8s app files into dev-applications
+     copy: src=/opt/app-files/dev-applications dest=.

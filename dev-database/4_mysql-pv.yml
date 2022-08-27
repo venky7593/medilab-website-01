@@ -10,5 +10,5 @@ spec:
     - ReadWriteOnce
   storageClassName: local-storage
   hostPath:
-    path: /var/lib/medilab-data   
+    path: /opt/medilab-data   
  

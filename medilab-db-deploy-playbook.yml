@@ -5,16 +5,16 @@
     become_user: clusteradmin
     tasks:
         - name: create the name space
-          shell: kubectl apply -f dev_database/1_mysql-ns.yml
+          shell: kubectl apply -f dev-database/1_mysql-ns.yml
         - name: create the configmap
-          shell: kubectl apply -f dev_database/2_medilabConfigurationsMap.yml
+          shell: kubectl apply -f dev-database/2_medilabConfigurationsMap.yml
         - name: create config secrete
-          shell: kubectl apply -f dev_database/3_medilabConfigSecret.yml
+          shell: kubectl apply -f dev-database/3_medilabConfigSecret.yml
         - name: create persitent Volume
-          shell: kubectl apply -f dev_database/4_mysql-pv.yml
+          shell: kubectl apply -f dev-database/4_mysql-pv.yml
         - name: create persitent Volume claim
-          shell: kubectl apply -f dev_database/5_mysql-pvc.yml
+          shell: kubectl apply -f dev-database/5_mysql-pvc.yml
         - name: create database daemonset
-          shell: kubectl apply -f dev_database/6_medilab-monolith-app-db-daemonset.yml
+          shell: kubectl apply -f dev-database/6_medilab-monolith-app-db-daemonset.yml
         - name: create database service
-          shell: kubectl apply -f dev_database/7_medilab-monolith-app-db-service.yml
+          shell: kubectl apply -f dev-database/7_medilab-monolith-app-db-service.yml

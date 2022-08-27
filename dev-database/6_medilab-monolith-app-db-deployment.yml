@@ -22,7 +22,7 @@ spec:
         # path: /var/opt/mysql/
         persistentVolumeClaim:
            claimName: mysql-pvc
-      restartPolicy: "always"
+      restartPolicy: "Always"
       containers:
        - name: medilab-monolith-db-server
          image: mysql

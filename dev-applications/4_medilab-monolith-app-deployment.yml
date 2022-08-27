@@ -16,8 +16,8 @@ spec:
         labels:
            app: medilab-monolith-app
       spec:
-         imagePullSecrets:
-          - name: medilab-image-registry
+         #imagePullSecrets:
+          #- name: medilab-image-registry
          containers:
            - name: medilab-monolith-app-container
              #image: narsi1839/medilab-monolith-app-image
